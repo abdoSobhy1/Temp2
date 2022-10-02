@@ -755,14 +755,16 @@ header nav .form i {
     top: -40px;
     right: -18px;
     padding: 4px 0;
-    width: 30px;
+    width: 40px;
     text-align: center;
     border-radius: 4px;
-    font-size: 12px;
 }
 
 .our-skills .skills .prog-holder .prog span::after {
     content: '';
+    position: absolute;
     border: 10px transparent solid;
     border-top-color: black;
+    right: -8px;
+    top: -15px;
 }
