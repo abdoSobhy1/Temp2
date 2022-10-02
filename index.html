@@ -17,7 +17,8 @@
                 <img src="images/logo.png" alt="logo">
             </a>
             <nav>
-                <ul>
+                <i class="fas fa-bars toggle-menu"></i>
+                <ul class="links">
                     <li><a class="active" href="#">Home</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Portofolio</a></li>
@@ -31,5 +32,18 @@
             </nav>
         </div>
     </header>
+    <script>
+        const menu = document.querySelector('.toggle-menu');
+        const links = document.querySelector('.links');
+        menu.onclick = function(){
+            links.classList.toggle('is-active')
+        }
+        document.querySelectorAll('.links li a').forEach(item => {
+            item.addEventListener('click', event => {
+                document.querySelectorAll('.links li a').forEach(i => {i.classList.remove('active')})
+                item.classList.add('active')
+            })
+        })
+    </script>
 </body>
 </html>
