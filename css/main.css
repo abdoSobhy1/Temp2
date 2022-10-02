@@ -337,3 +337,72 @@ header nav .form i {
     line-height: 2;
     color: #777;
 }
+
+.designs {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 600px;
+    position: relative;
+    background-image: url(../images/design-features.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.designs::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.designs .image,
+.designs .text {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.designs .image {
+    text-align: center;
+}
+
+@media (max-width:767px) {
+    .designs .image {
+        display: none;
+    }
+}
+
+.designs .image img{
+    position: relative;
+    bottom: -150px;
+}
+
+.designs .text {
+    color: white;
+    padding: 50px;
+    background-color: var(--trans-color);
+}
+
+.designs .text h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.designs .text ul li {
+    padding: 15px 0;
+    text-transform: capitalize;
+}
+
+.designs .text ul li::before {
+    content: "\f390";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 10px;
+}
