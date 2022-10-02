@@ -748,9 +748,21 @@ header nav .form i {
 }
 
 .our-skills .skills .prog-holder .prog span::before {
-    content: '';
+    content: attr(data-progress);
+    position: absolute;
+    background-color: black;
+    color: white;
+    top: -40px;
+    right: -18px;
+    padding: 4px 0;
+    width: 30px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 .our-skills .skills .prog-holder .prog span::after {
-
+    content: '';
+    border: 10px transparent solid;
+    border-top-color: black;
 }
