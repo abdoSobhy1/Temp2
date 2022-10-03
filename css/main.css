@@ -202,6 +202,7 @@ header nav .form i {
     background-image: url(../images/landing.jpg);
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 .landing::after {
