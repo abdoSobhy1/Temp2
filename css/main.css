@@ -204,7 +204,8 @@ header nav .form i {
     background-position: center;
 }
 
-.landing .overlay {
+.landing::after {
+    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -224,19 +225,11 @@ header nav .form i {
     background-color: var(--trans-color);
     display: flex;
     justify-content: flex-end;
+    z-index: 2;
 }
 
 .landing .text .content {
     max-width: 500px;
-}
-
-@media (max-width:768px) {
-    .landing .text {
-        width: 100%;
-    }
-    .landing .text .content {
-        max-width: 95%;
-    }
 }
 
 .landing .text .content h2 {
@@ -250,12 +243,31 @@ header nav .form i {
     line-height: 2;
 }
 
+
+@media (max-width:768px) {
+    .landing .text {
+        width: 100%;
+        padding: 20px 20px;
+    }
+    .landing .text .content {
+        max-width: 95%;
+    }
+    .landing .text .content h2 {
+        font-size: 25px;
+    }
+    .landing .text .content p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
 .landing .change-bg {
     position: absolute;
     top: 50%;
     transform: rotateY(-50%);
     color: #ddd;
     cursor: pointer;
+    z-index: 2;
 }
 
 @media (max-width:768px) {
@@ -278,6 +290,7 @@ header nav .form i {
     transform: translateX(-50%);
     bottom: 30px;
     display: flex;
+    z-index: 2;
 }
 
 .landing .bullets li {
@@ -809,9 +822,10 @@ header nav .form i {
     content: '\f10d';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    left: -20px;
     font-size: 20px;
-    position: absolute;
+    margin-right: 10px;
+    position: relative;
+    top: -10px;
 }
 
 .quote q::after {
@@ -820,7 +834,8 @@ header nav .form i {
     font-weight: 900;
     margin-left: 10px;
     font-size: 20px;
-    position: absolute;
+    position: relative;
+    top: -6px;
 }
 
 .pricing {
@@ -906,6 +921,7 @@ header nav .form i {
     border: 1px solid var(--main-color);
     width: fit-content;
     margin: 30px auto;
+    color: var(--main-color);
 }
 
 .pricing .contact-text {
