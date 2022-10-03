@@ -593,15 +593,18 @@ header nav .form i {
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--trans-color);
 }
 
 .stats .container .box {
     padding: 50px;
-    background-color: var(--trans-color);
     color: white;
 }
 
 @media (max-width:767px) {
+    .stats .container {
+        margin-inline: 15px;
+    }
     .stats .container .box {
         flex-basis: 100%;
     }
@@ -799,13 +802,16 @@ header nav .form i {
     margin-bottom: 20px;
     display: block;
     text-transform: capitalize;
+    position: relative;
 }
 
 .quote q::before {
     content: '\f10d';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    margin-right: 10px;
+    left: -20px;
+    font-size: 20px;
+    position: absolute;
 }
 
 .quote q::after {
@@ -813,6 +819,8 @@ header nav .form i {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     margin-left: 10px;
+    font-size: 20px;
+    position: absolute;
 }
 
 .pricing {
