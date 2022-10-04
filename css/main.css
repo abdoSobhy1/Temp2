@@ -203,6 +203,16 @@ header nav .form i {
     overflow: hidden;
 }
 
+.landing::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .landing .slides {
     top: 0;
     width: 300vw;
@@ -253,16 +263,6 @@ header nav .form i {
     100% {
         left: -200vw;
     }
-}
-
-.landing::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
 }
 
 .landing .text {
