@@ -198,12 +198,61 @@ header nav .form i {
 }
 
 .landing {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.landing .slides {
+    top: 0;
+    width: 300vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    animation: slider 9s linear infinite alternate;
+}
+
+.landing .slides > div {
     min-height: 100vh;
     background-color: #1f2021;
-    background-image: url(../images/landing.jpg);
     background-size: cover;
     background-position: center;
+    top: 0;
+    width: 100vw;
     position: relative;
+}
+
+.landing-slide1 {
+    background-image: url(../images/landing1.jpg);
+}
+
+.landing-slide2 {
+    background-image: url(../images/landing2.jpg);
+}
+
+.landing-slide3 {
+    background-image: url(../images/landing3.jpg);
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    30% {
+        left: 0;
+    }
+    33% {
+        left: -100vw;
+    }
+    64% {
+        left: -100vw;
+    }
+    67% {
+        left: -200vw;
+    }
+    100% {
+        left: -200vw;
+    }
 }
 
 .landing::after {
@@ -213,7 +262,7 @@ header nav .form i {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 .landing .text {
@@ -266,7 +315,7 @@ header nav .form i {
 .landing .change-bg {
     position: absolute;
     top: 50%;
-    transform: rotateY(-50%);
+    transform: translateY(-50%);
     color: #ddd;
     cursor: pointer;
     z-index: 2;
@@ -306,6 +355,51 @@ header nav .form i {
 .landing .bullets .active {
     background-color: var(--main-color);
     border-color: var(--main-color);
+    position: absolute;
+    animation: bullet-active 9s linear infinite alternate;
+}
+
+@keyframes bullet-active {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+    30% {
+        left: 0;
+        opacity: 1;
+    }
+    31% {
+        left: 0px;
+        opacity: 0;
+    }
+    32% {
+        left: 30px;
+        opacity: 0;
+    }
+    33% {
+        left: 30px;
+        opacity: 1;
+    }
+    64% {
+        left: 30px;
+        opacity: 1;
+    }
+    65% {
+        left: 30px;
+        opacity: 0;
+    }
+    66% {
+        left: 60px;
+        opacity: 0;
+    }
+    67% {
+        left: 60px;
+        opacity: 1;
+    }
+    100% {
+        left: 60px;
+        opacity: 1;
+    }
 }
 
 .services {
@@ -542,6 +636,12 @@ header nav .form i {
     background-color: var(--trans-color);
     text-align: center;
     color: white;
+}
+
+@media (max-width:768px) {
+    .video .text {
+        padding: 30px;
+    }
 }
 
 .video .text h2 {
