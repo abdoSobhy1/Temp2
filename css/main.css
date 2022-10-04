@@ -1184,6 +1184,9 @@ header nav .form i {
 
 .contact .content .info {
     flex-basis: 25%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .contact .content .info h4{
@@ -1199,8 +1202,8 @@ header nav .form i {
     margin-bottom: 10px;
 }
 
-.contact .content .info h4:nth-of-type(2){
-    margin-top: 70px;
+.contact .content .info .address h4 {
+    margin-top: -50px;
 }
 
 .contact .content .info address {
@@ -1214,8 +1217,8 @@ header nav .form i {
         order: -1;
     }
 
-    .contact .content .info h4:nth-of-type(2){
-        margin-top: 30px;
+    .contact .content .info .address h4{
+        margin-top: 0px;
     }
 
     .contact .content .info address {
