@@ -863,6 +863,7 @@ header nav .form i {
     background-color: var(--main-color);
     height: 100%;
     position: relative;
+    transition: 1s;
 }
 
 .our-skills .skills .prog-holder .prog span::before {

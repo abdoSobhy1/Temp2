@@ -108,7 +108,7 @@
             </div>
         </div>
     </div>
-    <div class="designs wow animate__animated animate__fadeInLeft" id="designs">
+    <div class="designs wow animate__animated animate__fadeInUp" id="designs">
         <div class="image">
             <img src="images/mobile.png" alt="">
         </div>
@@ -196,7 +196,7 @@
         </div>
         <a href="#" class="more wow animate__animated animate__zoomIn">More</a>
     </div>
-    <div class="video wow animate__animated animate__fadeInLeft">
+    <div class="video wow animate__animated animate__fadeInUp">
         <video autoplay muted loop>
             <source src="images/awesome-video.mp4" type="video/mp4">
         </video>
@@ -211,28 +211,28 @@
             <h2>About Us</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit incidunt odit esse veniam cupiditate dicta.</p>
         </div>
-        <img src="images/about.png" alt="">
+        <img src="images/about.png" alt="" class="wow animate__animated animate__zoomIn">
     </div>
     <div class="stats wow animate__animated animate__fadeInUp">
         <div class="container">
             <div class="box">
                 <i class="fas fa-mug-hot"></i>
-                <div class="number">69,420</div>
+                <div class="number" data-goal="420">0</div>
                 <p>Coffe Drinks</p>
             </div>
             <div class="box">
                 <i class="fas fa-folder"></i>
-                <div class="number">256</div>
+                <div class="number" data-goal="256">0</div>
                 <p>Completed Projects</p>
             </div>
             <div class="box">
                 <i class="fas fa-envelope"></i>
-                <div class="number">1,743</div>
+                <div class="number" data-goal="743">0</div>
                 <p>Mail Sent</p>
             </div>
             <div class="box">
                 <i class="fas fa-trophy"></i>
-                <div class="number">69</div>
+                <div class="number" data-goal="69">0</div>
                 <p>Awards Recieved</p>
             </div>
         </div>
@@ -268,32 +268,32 @@
                 <div class="prog-holder">
                     <h4>PhotoShop</h4>
                     <div class="prog">
-                        <span style="width: 90%" data-progress="90%"></span>
+                        <span style="width: 0" data-progress="90%"></span>
                     </div>
                 </div>
                 <div class="prog-holder">
                     <h4>After Effects</h4>
                     <div class="prog">
-                        <span style="width: 80%" data-progress="80%"></span>
+                        <span style="width: 0" data-progress="80%"></span>
                     </div>
                 </div>
                 <div class="prog-holder">
-                    <h4>Web Development</h4>
+                    <h4>Web Development</h4>0
                     <div class="prog">
-                        <span style="width: 69%" data-progress="69%"></span>
+                        <span style="width: 0" data-progress="69%"></span>
                     </div>
                 </div>
                 <div class="prog-holder">
                     <h4>Java Script</h4>
                     <div class="prog">
-                        <span style="width: 30%" data-progress="30%"></span>
+                        <span style="width: 0" data-progress="30%"></span>
                     </div>
                 </div>
             </di>
         </div>
         </div>
     </div>
-    <div class="quote wow animate__animated animate__zoomIn">
+    <div class="quote wow animate__animated animate__fadeInUp">
         <div class="container">
             <q>accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</q>
             <span>John Doe</span>
@@ -371,7 +371,7 @@
             <a href="#" class="contact-link wow animate__animated animate__zoomIn">Contact Us</a>
         </div>
     </div>
-    <div class="subscribe wow animate__animated animate__zoomIn">
+    <div class="subscribe wow animate__animated animate__fadeInUp">
         <div class="container">
             <form action="">
                 <i class="far fa-envelope fa-lg"></i>
@@ -446,6 +446,39 @@
                 item.classList.add('active')
             })
         })
+        
+        let progressSpans = document.querySelectorAll(".prog span");
+        let section = document.querySelector(".our-skills");
+
+        let nums = document.querySelectorAll(".stats .number");
+        let statsSection = document.querySelector(".stats");
+        let started = false; // Function Started ? No
+
+        window.onscroll = function () {
+        // Skills Animate Width
+        if (window.scrollY >= section.offsetTop - 250) {
+            progressSpans.forEach((span) => {
+            span.style.width = span.dataset.progress;
+            });
+        }
+        // Stats Increase Number
+        if (window.scrollY >= statsSection.offsetTop - 800) {
+            if (!started) {
+            nums.forEach((num) => startCount(num));
+            }
+            started = true;
+        }
+        };
+
+        function startCount(el) {
+        let goal = el.dataset.goal;
+        let count = setInterval(() => {
+            el.textContent++;
+            if (el.textContent == goal) {
+            clearInterval(count);
+            }
+        }, 2000 / goal);
+        }
     </script>
     <script src="scripts/wow.min.js"></script>
     <script>new WOW().init();</script>
