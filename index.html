@@ -237,9 +237,9 @@
             </div>
         </div>
     </div>
-    <div class="our-skills wow animate__animated animate__fadeInUp">
+    <div class="our-skills">
         <div class="container">
-            <div class="testimonials">
+            <div class="testimonials wow animate__animated animate__fadeInUp">
                 <h3>Testimonials</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit incidunt odit esse veniam cupiditate dicta.</p>
                 <div class="content">
@@ -278,7 +278,7 @@
                     </div>
                 </div>
                 <div class="prog-holder">
-                    <h4>Web Development</h4>0
+                    <h4>Web Development</h4>
                     <div class="prog">
                         <span style="width: 0" data-progress="69%"></span>
                     </div>
@@ -448,7 +448,7 @@
         })
         
         let progressSpans = document.querySelectorAll(".prog span");
-        let section = document.querySelector(".our-skills");
+        let section = document.querySelector(".skills");
 
         let nums = document.querySelectorAll(".stats .number");
         let statsSection = document.querySelector(".stats");
@@ -456,7 +456,7 @@
 
         window.onscroll = function () {
         // Skills Animate Width
-        if (window.scrollY >= section.offsetTop - 250) {
+        if (window.scrollY >= section.offsetTop - 600) {
             progressSpans.forEach((span) => {
             span.style.width = span.dataset.progress;
             });
